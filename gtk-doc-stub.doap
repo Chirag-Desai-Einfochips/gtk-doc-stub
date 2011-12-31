@@ -1,0 +1,26 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">gtk-doc</name>
+
+  <shortdesc xml:lang="en">Stub implementation of gtk-doc; used when
+gtk-doc is not needed.</shortdesc>
+
+  <homepage rdf:resource="http://www.gtk.org/gtk-doc/" />
+  <mailing-list rdf:resource="http://mail.gnome.org/mailman/listinfo/gtk-doc-devel-list" />
+  <download-page rdf:resource="http://download.gnome.org/sources/gtk-doc/" />
+  <bug-database rdf:resource="http://bugzilla.gnome.org/browse.cgi?product=gtk-doc" />
+
+  <category rdf:resource="http://api.gnome.org/doap-extensions#development" />
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Colin Walters</foaf:name>
+      <foaf:mbox rdf:resource="mailto:walters@verbum.org" />
+      <gnome:userid>walters</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+</Project>
