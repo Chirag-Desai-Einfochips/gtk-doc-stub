@@ -18,5 +18,5 @@ install: $(bin_programs)
 		install -m 0755 $$prog $(DESTDIR)$(bindir)/$$prog; \
 	done
 
-	mkdir -p $(datarootdir)/gtk-doc/data
-	touch $(datarootdir)/gtk-doc/data/gtk-doc.make
+	mkdir -p $(DESTDIR)$(datarootdir)/gtk-doc/data
+	touch $(DESTDIR)$(datarootdir)/gtk-doc/data/gtk-doc.make
