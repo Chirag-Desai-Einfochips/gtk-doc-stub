@@ -19,7 +19,7 @@ install: $(bin_programs)
 	done
 
 	mkdir -p $(DESTDIR)$(datarootdir)/gtk-doc/data
-	touch $(DESTDIR)$(datarootdir)/gtk-doc/data/gtk-doc.make
+	install -m 0644 $(srcdir)/gtk-doc.make $(DESTDIR)$(datarootdir)/gtk-doc/data/gtk-doc.make
 
 	mkdir -p $(DESTDIR)$(datarootdir)/aclocal/
 	install -m 0644 $(srcdir)/gtk-doc.m4 $(DESTDIR)$(datarootdir)/aclocal/gtk-doc.m4
