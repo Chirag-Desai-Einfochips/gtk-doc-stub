@@ -115,10 +115,10 @@ fi
 
 rm -f $docdir/gtk-doc.make
 if test "$copy" = yes; then
-  cp -f $datadir/gtk-doc/data/gtk-doc.make $docdir/gtk-doc.make ||
+  cp -f $datadir/gtk-doc-devel/gtk-doc.make $docdir/gtk-doc.make ||
     exit 1
 else
-  ln -sf $datadir/gtk-doc/data/gtk-doc.make $docdir/gtk-doc.make ||
-    cp -f $datadir/gtk-doc/data/gtk-doc.make $docdir/gtk-doc.make ||
+  ln -sf $datadir/gtk-doc-devel/gtk-doc.make $docdir/gtk-doc.make ||
+    cp -f $datadir/gtk-doc-devel/gtk-doc.make $docdir/gtk-doc.make ||
     exit 1
 fi
