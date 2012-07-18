@@ -23,3 +23,7 @@ install: $(bin_programs)
 
 	mkdir -p $(DESTDIR)$(datarootdir)/aclocal/
 	install -m 0644 $(srcdir)/gtk-doc.m4 $(DESTDIR)$(datarootdir)/aclocal/gtk-doc.m4
+
+	mkdir -p $(DESTDIR)$(datarootdir)/gobject-introspection-1.0
+	install -m 0644 $(srcdir)/Makefile.introspection $(DESTDIR)$(datarootdir)/gobject-introspection-1.0/Makefile.introspection
+	install -m 0644 $(srcdir)/introspection.m4 $(DESTDIR)$(datarootdir)/aclocal/introspection.m4
