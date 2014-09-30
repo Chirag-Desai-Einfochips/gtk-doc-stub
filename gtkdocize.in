@@ -102,6 +102,7 @@ fi
 # the correct flags must be passed to aclocal for it to find the macro.
 m4dir=`cat "$configure" | grep '^AC_CONFIG_MACRO_DIR' | sed -n -e 's/AC_CONFIG_MACRO_DIR(\([^()]*\))/\1/p' | sed -e 's/^\[\(.*\)\]$/\1/' | sed -e 1q`
 if test -n "$m4dir"; then
+  mkdir -p $m4dir
   rm -f $m4dir/gtk-doc.m4
   if test "$copy" = yes; then
     cp -f $datadir/aclocal/gtk-doc.m4 $m4dir/ ||
