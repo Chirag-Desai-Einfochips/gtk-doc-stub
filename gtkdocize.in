@@ -11,14 +11,35 @@ datarootdir=@datarootdir@
 datadir=@datadir@
 
 # options
-docdir=.
 copy=no
 makefile=gtk-doc.make
 flavour=legacy
 
 # mini help
 usage="\
-usage: $progname [ --copy ] [ --docdir DIR ] [ --flavour {legacy|legacy-flat|no-tmpl|no-tmpl-flat} ]"
+usage: $progname [ --copy ] [ --docdir DIR ] [ --flavour {legacy|legacy-flat|no-tmpl|no-tmpl-flat} ] [ --srcdir DIR ]"
+
+# Find the srcdir early (and ignore a srcdir set in configure).
+# https://bugzilla.gnome.org/show_bug.cgi?id=707426
+args="$*"
+while test $# -gt 0; do
+  case "$1" in
+  --srcdir)
+    shift
+    srcdir="$1"
+    shift ;;
+  --srcdir=*)
+    srcdir=`expr "X$1" : '[^=]*=\(.*\)'`
+    shift ;;
+  *)
+    shift ;;
+  esac
+done
+set - $args
+
+# assume working directory if srcdir is not set
+test "$srcdir" || srcdir=.
+test "$docdir" || docdir="$srcdir"
 
 # detect configure script
 no_configure_found=0
