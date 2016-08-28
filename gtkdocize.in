@@ -43,10 +43,10 @@ test "$docdir" || docdir="$srcdir"
 
 # detect configure script
 no_configure_found=0
-if test -f configure.ac; then
-  configure=configure.ac
-elif test -f configure.in; then
-  configure=configure.in
+if test -f "$srcdir/configure.ac"; then
+  configure="$srcdir/configure.ac"
+elif test -f "$srcdir/configure.in"; then
+  configure="$srcdir/configure.in"
 else
   no_configure_found=1
 fi
@@ -95,6 +95,13 @@ while test $# -gt 0; do
     shift ;;
   --flavour=*)
     flavour=`expr "X$1" : '[^=]*=\(.*\)'`
+    shift ;;
+  --srcdir)
+    # Handled above
+    shift
+    shift ;;
+  --srcdir=*)
+    # Handled above
     shift ;;
   -*)
     echo "$progname: unrecognised option '$1'" 1>&2
